@@ -6,6 +6,16 @@ def hello():
     else:
         print(f"hello {oddelek}")
 
+def poštevanka():
+    x = int(input ("izberi si število"))
+    y= 1
+    while y <= 10:
+        print(f"{y} * {x} = {y * x}")
+        y += 1
         
+    
+
 if __name__ == "__main__":
-    hello()
+    # hello()
+    poštevanka()
+
