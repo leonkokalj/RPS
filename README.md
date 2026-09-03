@@ -1,1 +1,3 @@
-# RPS
+# Vaja RPS
+
+avtor: Leon Kokalj
