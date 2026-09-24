@@ -1,0 +1,58 @@
+import random
+
+def igra():
+    igralec = random.choice(["kamen", "škarje", "papir"])
+    racunalnik = random.choice(["kamen", "škarje", "papir"])
+    
+    print("Računalnik je izbral:", racunalnik)
+
+    return igralec, racunalnik
+
+
+def rez(igralec, racunalnik):
+    if igralec == racunalnik:
+        return "neodločeno"
+
+    if igralec == "kamen" and racunalnik == "škarje":
+        return "igralec"
+    elif igralec == "škarje" and racunalnik == "papir":
+        return "igralec"
+    elif igralec == "papir" and racunalnik == "kamen":
+        return "igralec"
+    else:
+        return "računalnik"
+
+
+def stat(zmage, porazi, neodloceno):
+    print()
+    print("Statistika:")
+    print("Tvoje zmage:", zmage)
+    print("Zmago računalnika:", porazi)
+    print("Neodločeno:", neodloceno)
+
+
+zmage = 0
+porazi = 0
+neodloceno = 0
+
+while zmage < 10 and porazi < 10:
+    
+    igralec, racunalnik = igra()
+
+    rezultat = rez(igralec, racunalnik)
+
+    if rezultat == "igralec":
+        print("Zmagal si!")
+        zmage = zmage + 1
+
+    elif rezultat == "računalnik":
+        print("Zmagal je računalnik!")
+        porazi = porazi + 1
+
+    else:
+        print("Neodločeno!")
+        neodloceno = neodloceno + 1
+
+
+
+stat(zmage, porazi, neodloceno)
