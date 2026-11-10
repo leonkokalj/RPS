@@ -70,8 +70,81 @@ for i in range(1,61):
         if vsota >= 1000:
             break
 """
-import random as r
+import random
 
-a = r.randint(1,100)
+def naloga6():
+    stevilo = random.randint(1, 100)
+    poskusi = 0
+
+    while poskusi < 7:
+        try:
+            ugibanje = int(input(f"Poskus {poskusi + 1}: "))
+        except ValueError:
+            print("To ni število!")
+            continue
+
+        poskusi += 1
+
+        if ugibanje < stevilo:
+            print("Več!")
+        elif ugibanje > stevilo:
+            print("Manj!")
+        else:
+            print(f"Bravo! Uganil si v {poskusi} poskusih.")
+            return
+
+    print("Porabil si vseh 7 poskusov.")
+    print("Pravilno število je bilo:", stevilo)
+
+
+#naloga6()
+
+def cena_s_popustom(cena, popust):
+    return cena * (1 - popust / 100)
+
+
+slusalke = cena_s_popustom(40, 25)
+miska = cena_s_popustom(20, 10)
+podloga = cena_s_popustom(8, 0)
+
+skupaj = slusalke + miska + podloga
+
+print(f"Skupaj: {skupaj:.2f} EUR")
+
+
+            
+def je_prastevilo(n):
+    if n < 2:
+        return False
+
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+def prastevila_med(a, b):
+    seznam = []
+
+    for n in range(a, b + 1):
+        if je_prastevilo(n):
+            seznam.append(n)
+
+    return seznam
+
+
+
+prastevila = prastevila_med(1, 1000)
+print("Praštevil do 1000:", len(prastevila))
+
+koraki = [8200, 10500, 12000, 10900, 6400, 11000, 13200]
+def dni_nad_ciljem(koraki, cilj):
+    print(dni_nad_ciljem(koraki, 10000)) 
+    print(round(povprecje(koraki), 2))     
+    print(najvec(koraki))
+
+naloga9()                
+
 
             
